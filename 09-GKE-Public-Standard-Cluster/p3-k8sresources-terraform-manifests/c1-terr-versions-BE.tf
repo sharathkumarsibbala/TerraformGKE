@@ -6,15 +6,14 @@ terraform {
       source = "hashicorp/google"
       version = ">= 5.42.0"
     }
+    kubernetes = {
+      source = "hashicorp/kubernetes"
+      version = ">= 2.32"
+    }
   }
   backend "gcs" {
-    bucket = "terraform-on-gcp-gke"
-    prefix = "dev/gke-cluster-public"    
+    bucket = "terraform_state_gke"
+    prefix = "dev/k8s-demo1"
   }
 }
 
-# Terraform Provider Block
-provider "google" {
-  project = var.gcp_project
-  region = var.gcp_region1
-}

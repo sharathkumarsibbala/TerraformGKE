@@ -1,7 +1,7 @@
 # Resource: VPC
 resource "google_compute_network" "myvpc" {
   name = "${local.name}-vpc"
-  auto_create_subnetworks = false   
+  auto_create_subnetworks = false
 }
 
 # Resource: Subnet
